@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --bg: #051022;
+  --surface: #0a1733;
+  --surface-alt: #0b1d3e;
+  --line-soft: rgba(146, 172, 255, 0.22);
+  --line-strong: rgba(146, 172, 255, 0.38);
+  --text-main: #eef3ff;
+  --text-soft: #c2cde8;
+  --text-faint: #8d9ab6;
+  --brand: #3a72ff;
+  --brand-strong: #2f61ff;
+  --ring: #8ab0ff;
+
+  --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  --content-max: 1120px;
+  --content-x: max(20px, calc((100vw - var(--content-max)) / 2));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-chrome {
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-shell {
+  width: 100%;
+  margin: 0;
+}
+
+main.page-shell {
+  display: block;
+  padding-top: 0;
+}
+
+main.page-shell > section,
+main.page-shell > article {
+  position: relative;
+  margin: 0;
+  padding-block: clamp(52px, 8vw, 88px);
+  padding-inline: var(--content-x);
+  background: linear-gradient(120deg, rgba(12, 28, 64, 0.95) 0%, rgba(10, 21, 55, 0.92) 55%, rgba(10, 47, 68, 0.82) 100%);
+  border-top: 1px solid var(--line-soft);
+}
+
+main.page-shell > section:nth-child(even),
+main.page-shell > article:nth-child(even) {
+  background: linear-gradient(120deg, rgba(16, 22, 60, 0.95) 0%, rgba(14, 17, 50, 0.92) 52%, rgba(21, 62, 76, 0.8) 100%);
+}
+
+main.page-shell > section:nth-child(3n),
+main.page-shell > article:nth-child(3n) {
+  background: linear-gradient(120deg, rgba(9, 34, 62, 0.96) 0%, rgba(15, 31, 72, 0.9) 50%, rgba(16, 69, 82, 0.8) 100%);
+}
+
+main.page-shell > :first-child {
+  border-top: 0;
+}
+
+main.page-shell > section > *,
+main.page-shell > article > * {
+  width: min(100%, var(--content-max));
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 700px) {
+  :root {
+    --content-x: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

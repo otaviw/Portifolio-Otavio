@@ -1,0 +1,79 @@
+.project-card {
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  background: rgba(8, 14, 36, 0.82);
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(130, 160, 255, 0.58);
+  box-shadow: 0 24px 42px rgba(0, 0, 0, 0.45);
+}
+
+.project-content {
+  padding: 16px;
+}
+
+.project-industry {
+  display: inline-flex;
+  padding: 4px 9px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(130, 160, 255, 0.4);
+  border-radius: 999px;
+  color: #afc8ff;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
+  margin: 12px 0 8px;
+  color: var(--text-main);
+  font-size: 1.2rem;
+}
+
+.project-summary {
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+.project-access-note {
+  margin-top: 8px;
+  color: #9fb5e8;
+  font-size: 0.85rem;
+}
+
+.project-tags {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tags li {
+  border: 1px solid var(--line-soft);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+  font-size: 0.76rem;
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+
+.project-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.project-link {
+  display: inline-flex;
+  color: #acc5ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 220ms ease;
+}
+
+.project-link:hover {
+  color: var(--text-main);
+}

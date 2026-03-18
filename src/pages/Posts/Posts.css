@@ -1,0 +1,75 @@
+.posts-page {
+  display: block;
+}
+
+.posts-eyebrow {
+  color: #9eb8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.posts-hero h1 {
+  margin: 10px 0 0;
+  color: var(--text-main);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.16;
+  max-width: 16ch;
+}
+
+.posts-hero p {
+  margin-top: 12px;
+  color: var(--text-soft);
+  max-width: 62ch;
+}
+
+.posts-marquee {
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px 0;
+}
+
+.posts-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  animation: slidePosts 42s linear infinite;
+}
+
+.posts-track:hover {
+  animation-play-state: paused;
+}
+
+.showcase-item {
+  width: 240px;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(7, 12, 30, 0.65);
+}
+
+.showcase-item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes slidePosts {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 820px) {
+  .showcase-item {
+    width: 180px;
+  }
+}

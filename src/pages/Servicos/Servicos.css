@@ -1,0 +1,80 @@
+.servicos-page {
+  display: block;
+}
+
+.servicos-eyebrow {
+  color: #9eb8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.servicos-hero h1 {
+  margin: 10px 0 0;
+  color: var(--text-main);
+  font-size: clamp(1.8rem, 4.2vw, 3rem);
+  max-width: 18ch;
+  line-height: 1.15;
+}
+
+.servicos-hero p {
+  margin-top: 12px;
+  color: var(--text-soft);
+  max-width: 64ch;
+  line-height: 1.72;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.servicos-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.servicos-process-grid article {
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: rgba(8, 14, 36, 0.82);
+  padding: 14px;
+}
+
+.servicos-process-grid span {
+  color: #9eb8ff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.servicos-process-grid h3 {
+  margin: 8px 0 6px;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.servicos-process-grid p {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1080px) {
+  .servicos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .servicos-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .servicos-grid,
+  .servicos-process-grid {
+    grid-template-columns: 1fr;
+  }
+}
