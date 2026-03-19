@@ -1,6 +1,6 @@
-# Portfólio Premium React + Vite
+﻿# Portfólio Premium - React + Vite
 
-Portfólio multipágina com foco principal em conversão de clientes para serviços de criação de sites.
+Portfólio multipágina com foco em conversão de clientes para serviços de criação de sites.
 
 ## Stack
 
@@ -38,6 +38,7 @@ src/
     Footer/
     HeroSection/
     Navbar/
+    PostCard/
     ProjectCard/
     SectionTitle/
     ServiceCard/
@@ -55,6 +56,7 @@ src/
     ProjetoDetalhe/
     Servicos/
     Posts/
+    PostDetalhe/
     Sobre/
     Contato/
     NotFound/
@@ -66,16 +68,6 @@ src/
   main.jsx
 ```
 
-## Onde editar cada parte
-
-- Textos da Home: `src/pages/Home/Home.jsx`
-- Textos de serviços: `src/data/services.js`
-- Lista de projetos e detalhes: `src/data/projects.js`
-- Lista de posts (carrossel): `src/data/posts.js`
-- Contatos, links sociais, stack e prova de confiança: `src/data/site.js`
-- Cores globais, tipografia e layout base: `src/styles/global.css`
-- Navbar e rodapé: `src/components/Navbar/` e `src/components/Footer/`
-
 ## Rotas disponíveis
 
 - `/` Home
@@ -83,21 +75,32 @@ src/
 - `/projetos/:slug`
 - `/servicos`
 - `/posts`
+- `/posts/:slug`
 - `/sobre`
 - `/contato`
 - `*` página 404
 
-## Personalização rápida para publicar
+## Onde editar com facilidade
 
-1. Atualizar WhatsApp e e-mail em `src/data/site.js`.
-2. Trocar/ajustar projetos em `src/data/projects.js`.
-3. Substituir imagens de posts em `src/assets/posts/` e atualizar `src/data/posts.js`.
-4. Ajustar copy principal em `src/pages/Home/Home.jsx` e `src/pages/Servicos/Servicos.jsx`.
+- **Cores, tipografia e visual global**: `src/styles/global.css`
+- **Textos da Home e seções comerciais**: `src/pages/Home/Home.jsx`
+- **Projetos (cards + detalhe)**: `src/data/projects.js`
+- **Posts (lista + detalhe)**: `src/data/posts.js`
+- **Serviços**: `src/data/services.js`
+- **Contato, redes, stack e processo**: `src/data/site.js`
+- **Navbar e Footer**: `src/components/Navbar/` e `src/components/Footer/`
+
+## Personalização rápida
+
+1. Atualizar WhatsApp, e-mail e localização em `src/data/site.js`.
+2. Adicionar novos projetos em `src/data/projects.js`.
+3. Adicionar novos posts em `src/data/posts.js`.
+4. Ajustar copy comercial principal em `src/pages/Home/Home.jsx`.
 5. Publicar em Vercel/Netlify com domínio próprio.
 
 ## Observações de arquitetura
 
-- Cada página tem seu próprio CSS.
-- Cada componente reutilizável tem seu próprio CSS.
-- Dados separados da camada visual para facilitar crescimento.
-- Estrutura pronta para migrar dados para CMS/API no futuro.
+- Cada página possui seu próprio CSS.
+- Cada componente reutilizável possui seu próprio CSS.
+- Dados estão separados da camada visual para facilitar evolução.
+- A estrutura está pronta para migrar dados para CMS/API no futuro.

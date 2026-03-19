@@ -1,7 +1,9 @@
-export const contactData = {
+﻿export const contactData = {
   whatsapp: 'https://wa.me/5554996161912',
+  whatsappLabel: '54 99616-1912',
   email: 'carboneotavio18@gmail.com',
   location: 'Bento Gonçalves, RS, Brasil',
+  resumeUrl: 'https://drive.google.com/',
 }
 
 export const socialLinks = [
@@ -27,43 +29,43 @@ export const homeTechStack = [
   'SQL',
 ]
 
-export const processSteps = [
-  {
-    id: 'diagnostico',
-    title: 'Briefing rápido',
-    description: 'Levantamento de objetivo, público e direção do site.',
-  },
-  {
-    id: 'prototipo',
-    title: 'Layout e direção',
-    description: 'Estrutura visual pensada para clareza e conversão.',
-  },
-  {
-    id: 'desenvolvimento',
-    title: 'Desenvolvimento',
-    description: 'Implementação com performance, responsividade e boa experiência.',
-  },
-  {
-    id: 'publicacao',
-    title: 'Publicação',
-    description: 'Entrega no ar com base pronta para divulgação e vendas.',
-  },
-]
-
 export const credibilityItems = [
   {
     id: 'sites-reais',
     title: 'Projetos reais publicados',
-    description: 'Portfólio com sites no ar para avaliação imediata de visual e execução.',
+    description: 'Projetos no ar para avaliar design, experiência e qualidade de execução.',
   },
   {
-    id: 'fluxo-completo',
-    title: 'Design e desenvolvimento no mesmo fluxo',
-    description: 'Direção visual e código alinhados para manter padrão e velocidade de entrega.',
+    id: 'fullstack',
+    title: 'Entrega fullstack',
+    description: 'Frontend moderno com backend robusto para operações, integrações e escalabilidade.',
   },
   {
-    id: 'contato-direto',
-    title: 'Contato rápido no WhatsApp',
-    description: 'Canal direto para alinhar escopo, prazo e próximos passos sem fricção.',
+    id: 'foco-negocio',
+    title: 'Foco comercial',
+    description: 'Estrutura pensada para transformar visita em contato e oportunidade.',
+  },
+]
+
+export const processSteps = [
+  {
+    id: 'diagnostico',
+    title: 'Diagnóstico estratégico',
+    description: 'Entendimento de objetivo, público e posicionamento da marca.',
+  },
+  {
+    id: 'direcao-visual',
+    title: 'Direção visual e estrutura',
+    description: 'Definição de layout, hierarquia de informação e narrativa comercial.',
+  },
+  {
+    id: 'desenvolvimento',
+    title: 'Desenvolvimento e validação',
+    description: 'Implementação com foco em desempenho, responsividade e acabamento.',
+  },
+  {
+    id: 'publicacao',
+    title: 'Publicação e evolução',
+    description: 'Entrega no ar com base sólida para crescimento contínuo.',
   },
 ]

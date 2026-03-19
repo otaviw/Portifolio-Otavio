@@ -1,13 +1,13 @@
-.animated-background {
+﻿.animated-background {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
   overflow: hidden;
   background:
-    radial-gradient(circle at 10% 0%, rgba(69, 117, 255, 0.4), transparent 44%),
-    radial-gradient(circle at 92% 8%, rgba(32, 207, 184, 0.3), transparent 36%),
-    radial-gradient(circle at 85% 90%, rgba(67, 107, 255, 0.25), transparent 42%),
+    radial-gradient(circle at 10% 0%, rgba(var(--brand-rgb), 0.32), transparent 42%),
+    radial-gradient(circle at 92% 10%, rgba(var(--brand-alt-rgb), 0.2), transparent 34%),
+    radial-gradient(circle at 84% 88%, rgba(var(--brand-rgb), 0.24), transparent 42%),
     #061327;
 }
 
@@ -17,27 +17,28 @@
   height: 46vw;
   border-radius: 50%;
   filter: blur(86px);
-  opacity: 0.55;
+  opacity: 0.54;
 }
 
 .glow-left {
   left: -10vw;
   top: 6vh;
-  background: rgba(79, 130, 255, 0.72);
+  background: rgba(var(--brand-rgb), 0.72);
   animation: driftA 18s ease-in-out infinite alternate;
 }
 
 .glow-right {
   right: -12vw;
   bottom: -5vh;
-  background: rgba(38, 220, 196, 0.58);
+  background: rgba(var(--brand-alt-rgb), 0.58);
   animation: driftB 22s ease-in-out infinite alternate;
 }
 
 .grid-layer {
   position: absolute;
   inset: -20%;
-  background-image: linear-gradient(rgba(170, 191, 255, 0.08) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(170, 191, 255, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(170, 191, 255, 0.08) 1px, transparent 1px);
   background-size: 56px 56px;
   transform: perspective(600px) rotateX(58deg) translateY(22vh);
@@ -48,9 +49,9 @@
 .noise-layer {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 3px 3px;
-  opacity: 0.2;
+  opacity: 0.18;
   mix-blend-mode: soft-light;
 }
 
@@ -58,6 +59,7 @@
   0% {
     transform: translate3d(0, 0, 0) scale(1);
   }
+
   100% {
     transform: translate3d(8vw, 6vh, 0) scale(1.2);
   }
@@ -67,6 +69,7 @@
   0% {
     transform: translate3d(0, 0, 0) scale(1.1);
   }
+
   100% {
     transform: translate3d(-8vw, -8vh, 0) scale(0.92);
   }

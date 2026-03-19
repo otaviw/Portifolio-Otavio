@@ -1,40 +1,41 @@
-const services = [
+﻿const services = [
   {
     id: 'institutional',
-    title: 'Sites institucionais',
-    description: 'Site completo para apresentar a empresa com visual profissional.',
-    deliverables: ['Página inicial forte', 'Seções de serviço', 'Contato com WhatsApp'],
+    title: 'Site institucional premium',
+    description: 'Estrutura completa para apresentar sua empresa com clareza, autoridade e confiança.',
+    deliverables: ['Homepage estratégica', 'Seções de serviço', 'Contato com WhatsApp e e-mail'],
   },
   {
     id: 'landing-pages',
-    title: 'Landing pages',
-    description: 'Página focada em captação de leads e conversão de contatos.',
-    deliverables: ['Copy direta', 'CTA bem posicionado', 'Integração de contato'],
+    title: 'Landing page de conversão',
+    description: 'Página orientada para campanha, captação de leads e venda de oferta específica.',
+    deliverables: ['Copy objetiva', 'CTA forte', 'Layout focado em ação'],
   },
   {
     id: 'portfolio-sites',
-    title: 'Portfólio profissional',
-    description: 'Ideal para quem vende serviço e precisa mostrar alto nível de entrega.',
-    deliverables: ['Apresentação pessoal', 'Projetos em destaque', 'Página de contato'],
+    title: 'Portfólio para venda de serviços',
+    description: 'Modelo ideal para profissionais e empresas que precisam vender melhor online.',
+    deliverables: ['Apresentação posicionada', 'Projetos valorizados', 'Canal de contato direto'],
   },
   {
     id: 'redesign',
-    title: 'Reformulação de site',
-    description: 'Atualização visual e estrutural para tornar o site mais moderno e convincente.',
-    deliverables: ['Novo layout', 'Melhor usabilidade', 'Visual atualizado'],
+    title: 'Redesign e modernização',
+    description: 'Atualização visual e estrutural para elevar percepção de qualidade do seu site atual.',
+    deliverables: ['Novo visual', 'Melhor experiência', 'Arquitetura mais eficiente'],
   },
   {
     id: 'campaign-pages',
     title: 'Páginas promocionais',
-    description: 'Páginas para campanhas, lançamentos e ofertas específicas.',
-    deliverables: ['Layout rápido', 'Mensagem objetiva', 'Foco em resultado'],
+    description: 'Páginas para lançamentos, campanhas e ações comerciais com prazo curto.',
+    deliverables: ['Mensagem comercial clara', 'Visual impactante', 'Publicação rápida'],
   },
   {
-    id: 'interactive-experiences',
-    title: 'Design web para redes',
-    description: 'Direção visual para reforçar presença digital e autoridade de marca.',
-    deliverables: ['Padrão visual', 'Posts com identidade', 'Visual para conversão'],
+    id: 'social-design',
+    title: 'Design para redes sociais',
+    description: 'Criação de peças visuais para manter consistência de marca e atrair novos contatos.',
+    deliverables: ['Direção visual', 'Posts com padrão profissional', 'Conexão com estratégia do site'],
   },
 ]
 
 export default services
+

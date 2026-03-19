@@ -1,4 +1,4 @@
-import Button from '../../components/Button/Button.jsx'
+﻿import Button from '../../components/Button/Button.jsx'
 import './NotFound.css'
 
 function NotFound() {

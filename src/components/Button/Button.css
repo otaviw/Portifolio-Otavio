@@ -1,13 +1,13 @@
-.btn {
+﻿.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 999px;
   border: 1px solid transparent;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.01em;
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  transition: transform var(--ease-standard), box-shadow var(--ease-standard), border-color var(--ease-standard), background-color var(--ease-standard), color var(--ease-standard);
   cursor: pointer;
   white-space: nowrap;
 }
@@ -24,17 +24,29 @@
 .btn-primary {
   background: linear-gradient(130deg, var(--brand-strong), var(--brand));
   color: var(--text-main);
+  border-color: rgba(var(--brand-rgb), 0.5);
   box-shadow: 0 10px 28px rgba(47, 97, 255, 0.25);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 14px 36px rgba(47, 97, 255, 0.33);
+  box-shadow: 0 14px 36px rgba(47, 97, 255, 0.35);
+}
+
+.btn-contact-primary {
+  background: linear-gradient(130deg, #0f3f97, #1c58cc);
+  border-color: rgba(80, 132, 255, 0.58);
+  color: #ffffff;
+  box-shadow: 0 10px 26px rgba(10, 40, 102, 0.45);
+}
+
+.btn-contact-primary:hover {
+  box-shadow: 0 14px 34px rgba(10, 40, 102, 0.56);
 }
 
 .btn-secondary {
   border-color: var(--line-strong);
   color: var(--text-main);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .btn-secondary:hover {
@@ -51,23 +63,24 @@
 .btn-ghost:hover {
   color: var(--text-main);
   border-color: var(--line-soft);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .btn-sm {
-  min-height: 40px;
+  min-height: 38px;
   padding: 0 14px;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
 }
 
 .btn-md {
   min-height: 46px;
-  padding: 0 18px;
-  font-size: 0.95rem;
+  padding: 0 20px;
+  font-size: 0.93rem;
 }
 
 .btn-lg {
-  min-height: 52px;
-  padding: 0 22px;
-  font-size: 1rem;
+  min-height: 54px;
+  padding: 0 24px;
+  font-size: 0.96rem;
 }

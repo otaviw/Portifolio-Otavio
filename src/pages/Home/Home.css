@@ -1,5 +1,9 @@
-.home-page {
+﻿.home-page {
   display: block;
+}
+
+.home-section {
+  scroll-margin-top: 90px;
 }
 
 .home-grid {
@@ -7,10 +11,7 @@
   gap: 14px;
 }
 
-.home-grid-services {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
+.home-grid-services,
 .home-grid-projects {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -26,11 +27,19 @@
   border-radius: 14px;
   background: rgba(8, 14, 36, 0.78);
   padding: 16px;
+  transition: transform var(--ease-standard), border-color var(--ease-standard), box-shadow var(--ease-standard);
+}
+
+.home-proof-card:hover {
+  border-color: rgba(130, 160, 255, 0.55);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
 }
 
 .home-proof-card h3 {
   color: var(--text-main);
   font-size: 1.05rem;
+  transition: transform var(--ease-standard);
 }
 
 .home-proof-card p {
@@ -39,11 +48,15 @@
   line-height: 1.66;
 }
 
+.home-proof-card:hover h3 {
+  transform: translateX(3px);
+}
+
 .home-posts-marquee {
   overflow: hidden;
   border: 1px solid var(--line-soft);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.05);
   padding: 12px 0;
 }
 
@@ -89,9 +102,15 @@
   justify-content: center;
   font-weight: 600;
   color: var(--text-main);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.05);
   text-align: center;
   padding: 8px;
+  transition: transform var(--ease-standard), border-color var(--ease-standard);
+}
+
+.tech-grid li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(130, 160, 255, 0.5);
 }
 
 .process-grid {
@@ -105,6 +124,13 @@
   border-radius: 14px;
   background: rgba(8, 14, 36, 0.82);
   padding: 14px;
+  transition: transform var(--ease-standard), border-color var(--ease-standard), box-shadow var(--ease-standard);
+}
+
+.process-card:hover {
+  border-color: rgba(130, 160, 255, 0.55);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
 }
 
 .process-card span {
@@ -118,6 +144,7 @@
   margin: 8px 0 6px;
   color: var(--text-main);
   font-size: 1rem;
+  transition: transform var(--ease-standard);
 }
 
 .process-card p {
@@ -126,10 +153,28 @@
   line-height: 1.6;
 }
 
+.process-card:hover h3 {
+  transform: translateX(3px);
+}
+
+.home-contact-cta {
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  padding: clamp(18px, 3vw, 28px);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(52, 108, 255, 0.2), transparent 42%),
+    rgba(7, 12, 30, 0.74);
+}
+
+.home-contact-cta .section-title {
+  margin-bottom: 16px;
+}
+
 @keyframes slideHomePosts {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -138,10 +183,7 @@
 @media (max-width: 1100px) {
   .home-grid-services,
   .home-grid-projects,
-  .home-proof-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  .home-proof-grid,
   .process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

@@ -1,14 +1,13 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Button from '../Button/Button.jsx'
-import { contactData } from '../../data/site.js'
 import './Navbar.css'
 
 const navItems = [
   { label: 'Home', to: '/' },
-  { label: 'Projetos', to: '/projetos' },
+  { label: 'Projetos', href: '/#projetos-home' },
+  { label: 'Posts', href: '/#posts-home' },
+  { label: 'Contato', href: '/#contato-home' },
   { label: 'Serviços', to: '/servicos' },
-  { label: 'Posts', to: '/posts' },
   { label: 'Sobre', to: '/sobre' },
 ]
 
@@ -34,8 +33,8 @@ function Navbar() {
       <div className="navbar-container">
         <NavLink className="brand" to="/" onClick={closeMenu}>
           <span className="brand-copy">
-            Otávio
-            <small>Web Studio</small>
+            Otávio Carbone
+            <small>Web Design & Desenvolvimento</small>
           </span>
         </NavLink>
 
@@ -52,27 +51,27 @@ function Navbar() {
 
         <div className={`nav-panel ${isOpen ? 'open' : ''}`}>
           <nav aria-label="Navegação principal">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                to={item.to}
-                onClick={closeMenu}
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+            {navItems.map((item) => {
+              if (item.href) {
+                return (
+                  <a key={item.href} className="nav-link" href={item.href} onClick={closeMenu}>
+                    {item.label}
+                  </a>
+                )
+              }
 
-          <Button
-            className="nav-cta"
-            size="sm"
-            href={contactData.whatsapp}
-            external
-            onClick={closeMenu}
-          >
-            WhatsApp
-          </Button>
+              return (
+                <NavLink
+                  key={item.to}
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                  to={item.to}
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </NavLink>
+              )
+            })}
+          </nav>
         </div>
       </div>
     </header>

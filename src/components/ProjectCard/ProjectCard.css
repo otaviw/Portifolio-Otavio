@@ -1,7 +1,8 @@
-.project-card {
+﻿.project-card {
   border: 1px solid var(--line-soft);
   border-radius: 16px;
   background: rgba(8, 14, 36, 0.82);
+  overflow: hidden;
   transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
 }
 
@@ -11,11 +12,59 @@
   box-shadow: 0 24px 42px rgba(0, 0, 0, 0.45);
 }
 
+.project-visual {
+  border-bottom: 1px solid var(--line-soft);
+  overflow: hidden;
+}
+
+.project-visual img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-visual img {
+  transform: scale(1.05);
+}
+
+.project-visual-fallback {
+  aspect-ratio: 16 / 9;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(var(--brand-rgb), 0.34), transparent 40%),
+    radial-gradient(circle at 82% 84%, rgba(var(--brand-alt-rgb), 0.18), transparent 36%),
+    linear-gradient(135deg, #11224f, #0e1738);
+}
+
+.project-visual-fallback span {
+  color: #afc8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.project-visual-fallback strong {
+  color: var(--text-main);
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.project-visual-fallback p {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+}
+
 .project-content {
   padding: 16px;
 }
 
-.project-industry {
+.project-card .project-industry {
   display: inline-flex;
   padding: 4px 9px;
   font-size: 0.72rem;
@@ -24,6 +73,7 @@
   border-radius: 999px;
   color: #afc8ff;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .project-card h3 {
@@ -43,20 +93,34 @@
   font-size: 0.85rem;
 }
 
-.project-tags {
+.project-tags,
+.project-metrics-inline {
   margin-top: 14px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.project-tags li {
+.project-metrics-inline {
+  margin-top: 10px;
+}
+
+.project-tags li,
+.project-metrics-inline li {
   border: 1px solid var(--line-soft);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-main);
-  font-size: 0.76rem;
   border-radius: 999px;
   padding: 4px 9px;
+}
+
+.project-tags li {
+  font-size: 0.76rem;
+}
+
+.project-metrics-inline li {
+  font-size: 0.74rem;
+  color: var(--text-soft);
 }
 
 .project-actions {
@@ -76,4 +140,8 @@
 
 .project-link:hover {
   color: var(--text-main);
+}
+
+.project-link.project-link-muted {
+  color: var(--text-faint);
 }

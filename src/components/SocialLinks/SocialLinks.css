@@ -1,4 +1,4 @@
-.social-label {
+﻿.social-label {
   color: var(--text-main);
   font-weight: 700;
   font-size: 0.88rem;
@@ -18,8 +18,8 @@
   text-decoration: none;
   color: var(--text-soft);
   padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.02);
-  transition: border-color 220ms ease, transform 220ms ease;
+  background: rgba(255, 255, 255, 0.05);
+  transition: border-color var(--ease-standard), transform var(--ease-standard);
   display: flex;
   justify-content: space-between;
   align-items: center;

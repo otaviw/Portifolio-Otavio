@@ -1,22 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  --bg: #051022;
-  --surface: #0a1733;
-  --surface-alt: #0b1d3e;
-  --line-soft: rgba(146, 172, 255, 0.22);
-  --line-strong: rgba(146, 172, 255, 0.38);
+  --bg: #050d1f;
+  --surface-1: #09142d;
+  --surface-2: #0d1a37;
+  --surface-3: #12244a;
+
+  --line-soft: rgba(146, 172, 255, 0.24);
+  --line-strong: rgba(127, 198, 255, 0.62);
+
   --text-main: #eef3ff;
   --text-soft: #c2cde8;
   --text-faint: #8d9ab6;
-  --brand: #3a72ff;
-  --brand-strong: #2f61ff;
-  --ring: #8ab0ff;
+
+  --brand: #64b5f6;
+  --brand-strong: #9ad6ff;
+  --brand-rgb: 100, 181, 246;
+  --brand-alt: #55f0c8;
+  --brand-alt-rgb: 85, 240, 200;
+  --ring: #9ad6ff;
+
+  --shadow-soft: 0 18px 40px rgba(2, 8, 26, 0.38);
+  --shadow-lift: 0 28px 60px rgba(1, 6, 18, 0.6);
 
   --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body: 'Manrope', 'Segoe UI', sans-serif;
-  --content-max: 1120px;
-  --content-x: max(20px, calc((100vw - var(--content-max)) / 2));
+  --font-code: 'JetBrains Mono', 'Consolas', monospace;
+
+  --content-max: 1140px;
+  --content-x: max(22px, calc((100vw - var(--content-max)) / 2));
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --ease-standard: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 * {
@@ -35,13 +51,23 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(var(--brand-rgb), 0.16), transparent 30%),
+    radial-gradient(circle at 92% 8%, rgba(var(--brand-alt-rgb), 0.11), transparent 24%),
+    radial-gradient(circle at 82% 88%, rgba(var(--brand-rgb), 0.12), transparent 34%),
+    var(--bg);
   color: var(--text-main);
   font-family: var(--font-body);
   line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(var(--brand-rgb), 0.34);
+  color: var(--text-main);
 }
 
 .app-chrome {
@@ -63,24 +89,31 @@ main.page-shell > section,
 main.page-shell > article {
   position: relative;
   margin: 0;
-  padding-block: clamp(52px, 8vw, 88px);
+  padding-block: clamp(64px, 9vw, 108px);
   padding-inline: var(--content-x);
-  background: linear-gradient(120deg, rgba(12, 28, 64, 0.95) 0%, rgba(10, 21, 55, 0.92) 55%, rgba(10, 47, 68, 0.82) 100%);
-  border-top: 1px solid var(--line-soft);
+  border-top: 1px solid rgba(146, 172, 255, 0.2);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(var(--brand-rgb), 0.11), transparent 36%),
+    linear-gradient(160deg, rgba(8, 19, 45, 0.9), rgba(8, 15, 33, 0.94));
 }
 
 main.page-shell > section:nth-child(even),
 main.page-shell > article:nth-child(even) {
-  background: linear-gradient(120deg, rgba(16, 22, 60, 0.95) 0%, rgba(14, 17, 50, 0.92) 52%, rgba(21, 62, 76, 0.8) 100%);
+  background:
+    radial-gradient(circle at 84% 14%, rgba(var(--brand-alt-rgb), 0.11), transparent 34%),
+    linear-gradient(160deg, rgba(9, 16, 37, 0.92), rgba(6, 13, 30, 0.96));
 }
 
 main.page-shell > section:nth-child(3n),
 main.page-shell > article:nth-child(3n) {
-  background: linear-gradient(120deg, rgba(9, 34, 62, 0.96) 0%, rgba(15, 31, 72, 0.9) 50%, rgba(16, 69, 82, 0.8) 100%);
+  background:
+    radial-gradient(circle at 16% 84%, rgba(var(--brand-rgb), 0.1), transparent 34%),
+    linear-gradient(160deg, rgba(7, 18, 42, 0.92), rgba(6, 14, 32, 0.96));
 }
 
 main.page-shell > :first-child {
   border-top: 0;
+  padding-top: clamp(72px, 10vw, 110px);
 }
 
 main.page-shell > section > *,
@@ -95,7 +128,7 @@ h3,
 h4 {
   margin: 0;
   font-family: var(--font-heading);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 p {
@@ -119,8 +152,8 @@ a {
 
 [data-reveal] {
   opacity: 0;
-  transform: translate3d(0, 18px, 0);
-  transition: opacity 520ms ease, transform 520ms ease;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 560ms ease, transform 560ms ease;
 }
 
 [data-reveal].is-visible {
@@ -128,9 +161,32 @@ a {
   transform: translate3d(0, 0, 0);
 }
 
+.text-shimmer {
+  background: linear-gradient(90deg, #f5f9ff 0%, #8fcbff 40%, #61f0d5 60%, #f5f9ff 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 5s linear infinite;
+}
+
+@keyframes textShimmer {
+  from {
+    background-position: 200% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
 @media (max-width: 700px) {
   :root {
     --content-x: 16px;
+  }
+
+  main.page-shell > :first-child {
+    padding-top: clamp(68px, 14vw, 92px);
   }
 }
 
@@ -148,3 +204,4 @@ a {
     transform: none;
   }
 }
+
