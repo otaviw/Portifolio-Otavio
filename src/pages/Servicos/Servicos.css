@@ -1,4 +1,4 @@
-﻿.servicos-page {
+.servicos-page {
   display: block;
 }
 
@@ -7,27 +7,45 @@
 }
 
 .servicos-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   color: var(--brand);
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.servicos-eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-alt));
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .servicos-hero h1 {
-  margin-top: 12px;
+  margin-top: 0;
   color: var(--text-main);
-  font-size: clamp(2.1rem, 4.8vw, 3.7rem);
-  max-width: 15ch;
-  line-height: 1.08;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  max-width: 16ch;
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
-.servicos-hero p {
-  margin-top: 14px;
+.servicos-hero > p {
+  margin-top: 18px;
   color: var(--text-soft);
-  max-width: 64ch;
+  max-width: 60ch;
   line-height: 1.76;
+  font-size: 1.05rem;
 }
+
+/* ─── Services Grid ─────────────────────── */
 
 .servicos-grid {
   display: grid;
@@ -35,47 +53,106 @@
   gap: 14px;
 }
 
+/* Stagger for service cards */
+.servicos-grid .service-card:nth-child(2)[data-reveal] { transition-delay: 80ms; }
+.servicos-grid .service-card:nth-child(3)[data-reveal] { transition-delay: 160ms; }
+.servicos-grid .service-card:nth-child(4)[data-reveal] { transition-delay: 80ms; }
+.servicos-grid .service-card:nth-child(5)[data-reveal] { transition-delay: 160ms; }
+.servicos-grid .service-card:nth-child(6)[data-reveal] { transition-delay: 240ms; }
+
+/* ─── Benefits ──────────────────────────── */
+
 .servicos-benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
 
-.servicos-benefits-grid article,
-.servicos-process-grid article {
-  border: 1px solid var(--line-soft);
-  border-radius: 18px;
-  background: rgba(11, 16, 24, 0.7);
-  box-shadow: var(--shadow-soft);
-  padding: 16px;
+.servicos-benefits-grid article {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  padding: 22px;
+  transition: transform var(--ease-spring), border-color var(--ease-standard), box-shadow var(--ease-standard);
 }
 
-.servicos-benefits-grid h3,
-.servicos-process-grid h3 {
+.servicos-benefits-grid article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--brand-rgb), 0.22);
+  box-shadow:
+    0 0 0 1px rgba(var(--brand-rgb), 0.08),
+    0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.servicos-benefits-grid h3 {
   color: var(--text-main);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-.servicos-benefits-grid p,
-.servicos-process-grid p {
-  margin-top: 8px;
+.servicos-benefits-grid p {
+  margin-top: 10px;
   color: var(--text-soft);
   line-height: 1.68;
-  font-size: 0.92rem;
+  font-size: 0.93rem;
 }
+
+/* ─── Process Grid ──────────────────────── */
 
 .servicos-process-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
+}
+
+.servicos-process-grid article {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  padding: 20px;
+  transition: transform var(--ease-spring), border-color var(--ease-standard);
+}
+
+.servicos-process-grid article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--brand-rgb), 0.22);
 }
 
 .servicos-process-grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--brand-rgb), 0.28);
+  background: rgba(var(--brand-rgb), 0.07);
   color: var(--brand);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.24rem;
+  font-family: var(--font-code);
+  font-weight: 600;
+  font-size: 0.8rem;
 }
+
+.servicos-process-grid h3 {
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 12px 0 8px;
+}
+
+.servicos-process-grid p {
+  color: var(--text-soft);
+  line-height: 1.68;
+  font-size: 0.9rem;
+}
+
+/* ─── Responsive ────────────────────────── */
 
 @media (max-width: 1080px) {
   .servicos-grid,

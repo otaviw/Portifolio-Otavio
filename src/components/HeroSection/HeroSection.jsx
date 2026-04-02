@@ -1,4 +1,4 @@
-﻿import Button from '../Button/Button.jsx'
+import Button from '../Button/Button.jsx'
 import './HeroSection.css'
 
 function HeroIcon({ type }) {
@@ -9,7 +9,6 @@ function HeroIcon({ type }) {
       </svg>
     )
   }
-
   if (type === 'github') {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -17,7 +16,6 @@ function HeroIcon({ type }) {
       </svg>
     )
   }
-
   if (type === 'instagram') {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -25,13 +23,14 @@ function HeroIcon({ type }) {
       </svg>
     )
   }
-
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM8 12h8v2H8v-2Zm0 4h8v2H8v-2Z" />
     </svg>
   )
 }
+
+const heroTechStack = ['React', 'Node.js', 'Laravel', 'TypeScript', 'SQL', 'WebSocket']
 
 function HeroSection({
   eyebrow,
@@ -44,7 +43,7 @@ function HeroSection({
   secondaryAction,
 }) {
   return (
-    <section className="hero-section" data-reveal>
+    <section className="hero-section">
       <div className="hero-shell">
         <div className="hero-main">
           <p className="hero-eyebrow">{eyebrow}</p>
@@ -85,6 +84,13 @@ function HeroSection({
               </Button>
             ) : null}
           </div>
+
+          <div className="hero-tech-row">
+            <span className="hero-tech-label">Stack</span>
+            {heroTechStack.map((tech) => (
+              <span key={tech} className="hero-tech-tag">{tech}</span>
+            ))}
+          </div>
         </div>
 
         <aside className="hero-side">
@@ -100,6 +106,9 @@ function HeroSection({
                 >
                   <HeroIcon type={item.icon} />
                   <span>{item.label}</span>
+                  <svg className="hero-social-arrow" viewBox="0 0 12 12" aria-hidden="true">
+                    <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  </svg>
                 </a>
               ))}
             </div>
@@ -110,6 +119,7 @@ function HeroSection({
               <span></span>
               <span></span>
               <span></span>
+              <small className="hero-code-filename">projeto.config.js</small>
             </div>
             <div className="hero-code-body">
               <p className="typing-line line-1">
@@ -122,6 +132,12 @@ function HeroSection({
             </div>
           </div>
         </aside>
+      </div>
+
+      <div className="hero-scroll-hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
       </div>
     </section>
   )

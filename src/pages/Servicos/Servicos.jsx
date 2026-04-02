@@ -44,8 +44,8 @@ function Servicos() {
         />
 
         <div className="servicos-grid">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+          {services.map((service, index) => (
+            <ServiceCard key={service.id} service={service} index={index + 1} />
           ))}
         </div>
       </section>

@@ -1,46 +1,54 @@
-﻿.social-label {
-  color: var(--text-main);
+.social-label {
+  color: var(--text-faint);
+  font-size: 0.7rem;
   font-weight: 700;
-  font-size: 0.88rem;
   margin-bottom: 10px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .social-list {
   display: grid;
-  gap: 9px;
+  gap: 7px;
 }
 
 .social-list a {
-  border: 1px solid var(--line-soft);
-  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
   text-decoration: none;
-  color: var(--text-soft);
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: border-color var(--ease-standard), transform var(--ease-standard);
+  color: var(--text-faint);
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color var(--ease-standard), color var(--ease-standard), background-color var(--ease-standard);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  font-size: 0.88rem;
 }
 
 .social-list a:hover {
-  border-color: rgba(130, 160, 255, 0.56);
-  transform: translateY(-2px);
+  border-color: rgba(var(--brand-rgb), 0.24);
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .social-list span {
-  color: var(--text-main);
+  color: var(--text-soft);
   font-weight: 600;
+  transition: color var(--ease-standard);
+}
+
+.social-list a:hover span {
+  color: var(--text-main);
 }
 
 .social-list small {
   color: var(--text-faint);
+  font-size: 0.8rem;
 }
 
 .social-links.compact .social-list a {
   padding: 8px 10px;
-  border-radius: 10px;
+  border-radius: 9px;
 }

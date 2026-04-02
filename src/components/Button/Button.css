@@ -1,4 +1,4 @@
-﻿.btn {
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7,51 +7,88 @@
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.01em;
-  transition: transform var(--ease-standard), box-shadow var(--ease-standard), border-color var(--ease-standard), background-color var(--ease-standard), color var(--ease-standard);
+  transition:
+    transform var(--ease-standard),
+    box-shadow var(--ease-standard),
+    border-color var(--ease-standard),
+    background-color var(--ease-standard),
+    color var(--ease-standard);
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
   transform: translateY(-2px);
 }
 
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
 .btn:focus-visible {
   outline: 2px solid var(--ring);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
+
+/* Shine sweep effect */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 62%
+  );
+  background-size: 200% 100%;
+  background-position: 200% 0;
+  transition: background-position 520ms ease;
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  background-position: -200% 0;
+}
+
+/* ─── Variants ───────────────────────────── */
 
 .btn-primary {
   background: linear-gradient(130deg, var(--brand-strong), var(--brand));
-  color: var(--text-main);
-  border-color: rgba(var(--brand-rgb), 0.5);
-  box-shadow: 0 10px 28px rgba(47, 97, 255, 0.25);
+  color: #02081a;
+  border-color: rgba(var(--brand-rgb), 0.4);
+  box-shadow: 0 8px 28px rgba(var(--brand-rgb), 0.2);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 14px 36px rgba(47, 97, 255, 0.35);
+  box-shadow: 0 12px 40px rgba(var(--brand-rgb), 0.35);
+  border-color: rgba(var(--brand-rgb), 0.6);
 }
 
 .btn-contact-primary {
-  background: linear-gradient(130deg, #0f3f97, #1c58cc);
-  border-color: rgba(80, 132, 255, 0.58);
+  background: linear-gradient(130deg, #1a4fa0, #2563eb);
+  border-color: rgba(80, 130, 255, 0.45);
   color: #ffffff;
-  box-shadow: 0 10px 26px rgba(10, 40, 102, 0.45);
+  box-shadow: 0 8px 28px rgba(20, 60, 160, 0.38);
 }
 
 .btn-contact-primary:hover {
-  box-shadow: 0 14px 34px rgba(10, 40, 102, 0.56);
+  box-shadow: 0 12px 40px rgba(20, 60, 160, 0.52);
 }
 
 .btn-secondary {
   border-color: var(--line-strong);
   color: var(--text-main);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
 }
 
 .btn-secondary:hover {
-  border-color: rgba(130, 160, 255, 0.7);
-  box-shadow: 0 14px 34px rgba(2, 10, 36, 0.55);
+  border-color: rgba(var(--brand-rgb), 0.5);
+  background: rgba(var(--brand-rgb), 0.08);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
 }
 
 .btn-ghost {
@@ -63,24 +100,27 @@
 .btn-ghost:hover {
   color: var(--text-main);
   border-color: var(--line-soft);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
 }
 
+/* ─── Sizes ──────────────────────────────── */
+
 .btn-sm {
-  min-height: 38px;
+  min-height: 36px;
   padding: 0 14px;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .btn-md {
   min-height: 46px;
-  padding: 0 20px;
+  padding: 0 22px;
   font-size: 0.93rem;
 }
 
 .btn-lg {
   min-height: 54px;
-  padding: 0 24px;
-  font-size: 0.96rem;
+  padding: 0 28px;
+  font-size: 0.97rem;
 }
